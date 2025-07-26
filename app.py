@@ -4,18 +4,23 @@ from flasgger import Swagger
 app = Flask(__name__)
 swagger = Swagger(app)
 
+@app.route('/')
+def home():
+    return jsonify(message="Welcome to the Flask App on EC2!")
+
 @app.route('/hello')
 def hello():
     """
-    A simple hello endpoint.
+    A simple hello world endpoint.
     ---
     responses:
       200:
         description: A successful response
         examples:
-          application/json: {"message": "Hello, world!"}
+          application/json: {"message": "Hello from EC2!"}
     """
     return jsonify(message="Hello from EC2!")
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True)
+
