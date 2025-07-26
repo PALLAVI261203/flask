@@ -17,7 +17,7 @@ def hello():
       200:
         description: A successful response
         examples:
-          application/json: {"message": "Hello from EC2!"}
+          application/json: {"message": "Hello from EC2 to pallavi!"}
     """
     return jsonify(message="Hello from EC2!")
 
